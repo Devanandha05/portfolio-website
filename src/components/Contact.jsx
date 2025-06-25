@@ -7,7 +7,7 @@ export default function Contact() {
       className="py-20 px-6 md:px-20 bg-[#e5e8d8] dark:bg-[#13071d] text-gray-800 dark:text-white"
     >
       <motion.div
-        initial={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="max-w-6xl mx-auto"
@@ -33,7 +33,7 @@ export default function Contact() {
               Get in Touch
             </h2>
             <form
-              action="https://formspree.io/f/YOUR_FORM_ID" // <-- replace this!
+              action="https://formspree.io/f/mgvypyrl" // <-- replace this!
               method="POST"
               className="flex flex-col space-y-6"
             >

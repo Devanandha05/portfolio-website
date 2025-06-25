@@ -44,7 +44,7 @@ export default function Projects() {
         {projects.map((project, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 1, y: 0 }}//20
+            initial={{ opacity: 0, y: 20 }}//20
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.1 }}
             className="relative group overflow-hidden rounded-xl shadow-lg bg-gray-100 dark:bg-[#1c1c1c]"

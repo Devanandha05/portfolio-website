@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-const disableAnimations = true; 
+const disableAnimations = false;
 
 
 const frontendSkills = [
@@ -39,15 +39,14 @@ const getKnowledgePercent = (level) => {
 
 const SkillCard = ({ skill }) => {
   return (
-    <motion.div
-    {...(!disableAnimations && {
-      whileInView: { opacity: 1, y: 0 },
-      initial: {opacity: 0, y: 40 },
-      transition: { duration: 0.4 },
-    })}
-      className="group perspective"
-      id="skills"
-    >
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 60 }}
+        transition={{ duration: 0.4 }}
+        className="group perspective"
+        id="skills"
+      >
+    
       <div className="relative w-full h-40 transition-transform duration-500 transform-style preserve-3d group-hover:rotate-y-180">
         {/* Front Side */}
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#f8f8f8] border-black/10 dark:bg-white/10 border dark:border-white/10 rounded-xl shadow-lg backface-hidden p-4">
