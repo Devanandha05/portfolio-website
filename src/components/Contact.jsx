@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import contactImg from "../assets/portfolio-pic1.png"
 
 export default function Contact() {
   return (
@@ -22,7 +23,7 @@ export default function Contact() {
             className="hidden md:flex justify-center"
           >
             <img
-              src="/portfolio-pic1.png"
+              src={contactImg}
               alt="Illustration"
               className="w-full max-w-sm md:max-w-md"
             />

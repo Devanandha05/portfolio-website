@@ -1,4 +1,7 @@
 import { motion } from "framer-motion"; 
+import blob from "../assets/blob.png";
+import profilepic from "../assets/portrait-black-nobg1.png";
+import blob1 from "../assets/white-blob.png"
 
 export default function Hero() {
   return (
@@ -82,23 +85,23 @@ export default function Hero() {
     >
       {/* White Amoeba-style Blob Behind Image */}
 <div className="absolute -top-10 -left-20 w-[460px] h-[580px] z-0">
-  <img src="white-blob.png" alt="blob1" />
+  <img src={blob1} alt="blob1" />
 </div>
 <div className="absolute -top-2 -left-24 w-[460px] h-[580px] z-0">
-  <img src="blob.png" alt="blob2" />
+  <img src={blob} alt="blob2" />
 </div>
 <div className="hidden md:block absolute top-20 -left-22 w-[480px] h-[600px] z-0">
-  <img src="blob.png" alt="blob3" />
+  <img src={blob} alt="blob3" />
 </div>
 <div className="hidden md:block absolute top-36 -left-28 w-[420px] h-[500px] z-0">
-  <img src="white-blob.png" alt="blob4" />
+  <img src={blob1} alt="blob4" />
 </div>
 
       {/* Profile Image Container */}
       <div className="relative z-10 w-72 h-82 md:w-full md:h-full overflow-hidden rounded-3xl md:rounded-xl mx-auto md:mx-0">
         {/* Dark Theme Image */}
         <img
-          src="/portrait-black-nobg1.png"
+          src={profilepic}
           alt="Profile Dark"
           className="w-full h-full object-cover dark:block"
         />

@@ -1,8 +1,13 @@
+import ecodo from '../assets/ecodo.png';
+import coffee from '../assets/coffee.png';
+import yoga from '../assets/yoga.png';
+import font from '../assets/font-generator.png';
+
 const projects = [
   {
     title: "Productivity & Sustainability optimizer",
     description: "WebApp showcasing skills in React and Python Flask.",
-    image: "/ecodo.png",
+    image: {ecodo},
     tags: ["AI", "Machine Learning"],
     demoLink: "https://your-demo-link.com",
     codeLink: "https://github.com/Devanandha05/Ecodo",
@@ -10,7 +15,7 @@ const projects = [
     {
       title: "Coffee Shop Landing Page",
       description: "Modern and responsive coffee shop website using React & Tailwind.",
-      image: "/coffee.png",
+      image: {coffee},
       tags: ["React", "Tailwind"],
       demoLink: "https://your-demo-link.com",
       codeLink: "https://github.com/your-repo",
@@ -18,7 +23,7 @@ const projects = [
     {
       title: "Yoga Landing Page",
       description: "Modern, minimal Landing page showcasing frontend skills.",
-      image: "/yoga.png",
+      image: {yoga},
       tags: ["HTML", "CSS"],
       demoLink: "https://your-demo-link.com",
       codeLink: "https://github.com/Devanandha05/yoga-landing-page",
@@ -26,7 +31,7 @@ const projects = [
     {
       title: "Font Generator",
       description: "Responsive Font generator website using Javascript.",
-      image: "/font-generator.png",
+      image: {font},
       tags: ["Havascript", "Canvas"],
       demoLink: " https://devanandha05.github.io/customfont-creator/",
       codeLink: "https://github.com/Devanandha05/customfont-creator",

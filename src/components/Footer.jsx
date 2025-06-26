@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import githubIcon from '../assets/github.jpg';
+import linkedinIcon from '../assets/linkedin.png';
+import emailIcon from '../assets/email.png';
 
 export default function Footer() {
   return (
@@ -20,7 +23,7 @@ export default function Footer() {
             className="hover:scale-110 transition-transform duration-200"
           >
             <img
-              src="/github.jpg"
+              src={githubIcon}
               alt="GitHub profile"
               className="w-6 h-6 rounded-lg object-contain"
             />
@@ -33,7 +36,7 @@ export default function Footer() {
             className="hover:scale-110 transition-transform duration-200"
           >
             <img
-              src="/linkedin.png"
+              src={linkedinIcon}
               alt="LinkedIn profile"
               className="w-6 h-6 object-contain"
             />
@@ -44,7 +47,7 @@ export default function Footer() {
             className="hover:scale-110 transition-transform duration-200"
           >
             <img
-              src="/email.png"
+              src={emailIcon}
               alt="Send email"
               className="w-6 h-6 object-contain"
             />

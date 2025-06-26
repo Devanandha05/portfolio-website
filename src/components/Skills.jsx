@@ -1,30 +1,44 @@
 import { motion } from "framer-motion";
+import reactIcon from '../assets/react-icon.png'
+import tail from '../assets/tailwind-logo.png'
+import html from '../assets/html-logo.png'
+import css from '../assets/css.png'
+import js from '../assets/js-logo.png'
+import java from '../assets/java.jpg'
+import python from '../assets/Python.jpg'
+import cpp from '../assets/cpp.jpg'
+import mongo from '../assets/mongodb.png'
+import sql from '../assets/mysql.jpg'
+import git from "../assets/github.jpg";
+import vs from "../assets//vscode-logo.jpg";
+import cursor from "../assets/cursor-logo.jpg";
+
 const disableAnimations = false;
 
 
 const frontendSkills = [
-  { name: "React", knowledge: "Intermediate", icon: "/react-icon.png", fact: "✅ 15+ components built" },
-  { name: "Tailwind CSS", knowledge: "Intermediate", icon: "/tailwind-logo.png", fact: "🎨 Clean UI layouts" },
-  { name: "HTML5", knowledge: "Proficient", icon: "/html-logo.png", fact: "📄 Semantic markup pro" },
-  { name: "CSS", knowledge: "Intermediate", icon: "/css.png", fact: "💅 Custom animations created" },
-  { name: "JavaScript", knowledge: "Intermediate", icon: "/js-logo.png", fact: "💡 5+ APIs integrated" },
+  { name: "React", knowledge: "Intermediate", icon:{reactIcon}, fact: "✅ 15+ components built" },
+  { name: "Tailwind CSS", knowledge: "Intermediate", icon:{tail}, fact: "🎨 Clean UI layouts" },
+  { name: "HTML5", knowledge: "Proficient", icon:{html}, fact: "📄 Semantic markup pro" },
+  { name: "CSS", knowledge: "Intermediate", icon:{css}, fact: "💅 Custom animations created" },
+  { name: "JavaScript", knowledge: "Intermediate", icon:{js}, fact: "💡 5+ APIs integrated" },
 ];
 
 const programmingLanguages = [
-  { name: "Java", knowledge: "Intermediate", icon: "/java.jpg", fact: "OOP Projects done" },
-  { name: "Python", knowledge: "Beginner", icon: "/Python.jpg", fact: "🐍 Learning data handling" },
-  {name: "C++", knowledge:"Proficient", icon: "/cpp.jpg", fact:"30+ programs written"}
+  { name: "Java", knowledge: "Intermediate", icon:{java}, fact: "OOP Projects done" },
+  { name: "Python", knowledge: "Beginner", icon:{python}, fact: "🐍 Learning data handling" },
+  {name: "C++", knowledge:"Proficient", icon: {cpp}, fact:"30+ programs written"}
 ]
 
 const databases = [
-  { name: "MongoDB", knowledge: "Basic Understanding", icon: "/mongodb.png", fact: "📦 Used in invoice app" },
-  { name: "SQL", knowledge: "Intermediate", icon: "/mysql.jpg", fact: "🗂 Structured data queries" },
+  { name: "MongoDB", knowledge: "Basic Understanding", icon:{mongo}, fact: "📦 Used in invoice app" },
+  { name: "SQL", knowledge: "Intermediate", icon:{sql}, fact: "🗂 Structured data queries" },
 ]
 
 const Tools = [
-  { name: "Github", knowledge: "Basic Understanding", icon: "/github.jpg", fact: "🔧 Version control daily" },
-  { name: "VS Code", knowledge: "Intermediate", icon: "/vscode-logo.jpg", fact: "🔧 Version control daily" },
-  { name: "Cursor AI", knowledge: "Intermediate", icon: "/cursor-logo.jpg", fact: "🔧 Version control daily" },
+  { name: "Github", knowledge: "Basic Understanding", icon:{git}, fact: "🔧 Version control daily" },
+  { name: "VS Code", knowledge: "Intermediate", icon:{vs}, fact: "🔧 Version control daily" },
+  { name: "Cursor AI", knowledge: "Intermediate", icon:{cursor}, fact: "🔧 Version control daily" },
 ];
 
 const getKnowledgePercent = (level) => {
