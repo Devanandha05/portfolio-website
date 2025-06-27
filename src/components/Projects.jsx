@@ -1,40 +1,48 @@
 import ecodo from '../assets/ecodo.png';
-import coffee from '../assets/coffee.png';
+import coffee from '../assets/coffeee.png';
 import yoga from '../assets/yoga.png';
 import font from '../assets/font-generator.png';
+import portfolio from '../assets/portfolio-web.png';
 
 const projects = [
   {
     title: "Productivity & Sustainability optimizer",
     description: "WebApp showcasing skills in React and Python Flask.",
-    image: {ecodo},
-    tags: ["AI", "Machine Learning"],
-    demoLink: "https://your-demo-link.com",
+    image: ecodo,
+    tags: ["AI", " Machine Learning"],
     codeLink: "https://github.com/Devanandha05/Ecodo",
   },
     {
       title: "Coffee Shop Landing Page",
       description: "Modern and responsive coffee shop website using React & Tailwind.",
-      image: {coffee},
-      tags: ["React", "Tailwind"],
+      image: coffee,
+      tags: ["React", " Tailwind"],
       demoLink: "https://your-demo-link.com",
-      codeLink: "https://github.com/your-repo",
+      codeLink: "https://github.com/Devanandha05/landingpage-template",
     },
     {
-      title: "Yoga Landing Page",
+      title: "SerenYu Landing Page",
       description: "Modern, minimal Landing page showcasing frontend skills.",
-      image: {yoga},
-      tags: ["HTML", "CSS"],
-      demoLink: "https://your-demo-link.com",
+      image: yoga,
+      tags: ["HTML", " CSS"],
+      demoLink: "https://devanandha05.github.io/yoga-landing-page/",
       codeLink: "https://github.com/Devanandha05/yoga-landing-page",
     },
     {
       title: "Font Generator",
       description: "Responsive Font generator website using Javascript.",
-      image: {font},
-      tags: ["Havascript", "Canvas"],
+      image: font ,
+      tags: ["Javascript", " Canvas"],
       demoLink: " https://devanandha05.github.io/customfont-creator/",
       codeLink: "https://github.com/Devanandha05/customfont-creator",
+    },
+    {
+      title: "Portfolio Website",
+      description: "Responsive Portfolio website with Dark/Light Theme.",
+      image: portfolio ,
+      tags: ["React", " Tailwind CSS"],
+      demoLink: " https://devanandha05.github.io/portfolio-website/",
+      codeLink: "https://github.com/Devanandha05/portfolio-website",
     },
     // Add more as needed
   ];
@@ -43,7 +51,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 px-6 md:px-20 bg-[#ebfbe8] dark:bg-[#1e102a] text-gray-800 dark:text-white">
+    <section id="projects" className="py-20 px-6 md:px-20 bg-black/5 dark:bg-[#1e102a] text-gray-800 dark:text-white">
       <h2 className="text-4xl font-bold text-center mb-12">Projects</h2>
       <div className="mx-4 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, i) => (
@@ -65,6 +73,7 @@ export default function Projects() {
             <div className="absolute inset-0 bg-black/70 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-center items-center text-white px-4 text-center">
               <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
               <p className="text-sm">{project.description}</p>
+              <p className='text-base text-white font-medium'>| {project.tags} |</p>
               <div className="flex gap-4 mt-4">
                 <a
                   href={project.demoLink}

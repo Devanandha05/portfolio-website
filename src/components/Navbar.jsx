@@ -40,7 +40,7 @@ export default function Navbar() {
           href="#about"
           className="relative after:absolute after:left-0 after:-bottom-1 after:h-[4px] after:w-0 after:bg-[#f8f8f8] after:transition-all after:duration-300 hover:after:w-full"
         >
-          About
+          About Me
         </a>
       </li>
       <li>
@@ -48,7 +48,7 @@ export default function Navbar() {
           href="#skills"
           className="relative after:absolute after:left-0 after:-bottom-1 after:h-[4px] after:w-0 after:bg-[#f8f8f8] after:transition-all after:duration-300 hover:after:w-full"
         >
-          Skills
+          My Skills
         </a>
       </li>
       <li>
@@ -66,23 +66,23 @@ export default function Navbar() {
       <motion.a
         href="#contact"
         whileHover={{ scale: 1.05 }}
-        className="hidden md:inline-block px-6 py-2 border border-gradient dark:border-white rounded-full text-white hover:bg-white hover:text-black transition font-medium backdrop-blur-sm bg-white/10"
+        className="hidden md:inline-block px-6 py-2 border border-gradient dark:border-white rounded-xl text-white hover:bg-white hover:text-black transition font-medium backdrop-blur-sm bg-white/10"
       >
-        Contact
+        Reach Out
       </motion.a>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-black/80 text-white px-6 py-4 flex flex-col gap-4 md:hidden backdrop-blur-md">
+        <div className="absolute top-16 left-0 w-full bg-gradient-to-b from-[#3b1555] via-[#300948] to-[#2f0135] text-white px-6 py-4 flex flex-col gap-4 md:hidden backdrop-blur-md">
           <a href="#about" onClick={() => setIsOpen(false)} className="hover:text-dBlue">About</a>
           <a href="#skills" onClick={() => setIsOpen(false)} className="hover:text-dBlue">Skills</a>
           <a href="#projects" onClick={() => setIsOpen(false)} className="hover:text-dBlue">Projects</a>
           <motion.a
             href="#contact"
             whileHover={{ scale: 1.05 }}
-            className="mt-2 px-4 py-2 border border-white rounded-full text-white hover:bg-white hover:text-black transition font-medium backdrop-blur-sm bg-white/10"
+            className="w-28 mt-2 px-4 py-2 border border-white rounded-full text-white hover:bg-white hover:text-black transition font-medium backdrop-blur-sm bg-white/10"
           >
-            Contact
+            Reach Out
           </motion.a>
         </div>
       )}
