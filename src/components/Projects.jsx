@@ -1,5 +1,6 @@
 import ecodo from '../assets/ecodo.png';
 import coffee from '../assets/coffeee.png';
+import tictac from '../assets/tictactoe.png'
 import yoga from '../assets/yoga.png';
 import font from '../assets/font-generator.png';
 import portfolio from '../assets/portfolio-web.png';
@@ -13,20 +14,12 @@ const projects = [
     codeLink: "https://github.com/Devanandha05/Ecodo",
   },
     {
-      title: "Coffee Shop Landing Page",
-      description: "Modern and responsive coffee shop website using React & Tailwind.",
-      image: coffee,
-      tags: ["React", " Tailwind"],
-      demoLink: "https://your-demo-link.com",
-      codeLink: "https://github.com/Devanandha05/landingpage-template",
-    },
-    {
-      title: "SerenYu Landing Page",
-      description: "Modern, minimal Landing page showcasing frontend skills.",
-      image: yoga,
-      tags: ["HTML", " CSS"],
-      demoLink: "https://devanandha05.github.io/yoga-landing-page/",
-      codeLink: "https://github.com/Devanandha05/yoga-landing-page",
+      title: "4x4 Tic-Tac-Toe",
+      description: "",
+      image: tictac,
+      tags: ["Python Flask ","React", " Tailwind CSS"],
+      demoLink: "https://686f9a4881c8d29ca02a4fd7--tic-tac-toe4x4.netlify.app/",
+      codeLink: "https://github.com/Devanandha05/tictactoe-backend",
     },
     {
       title: "Font Generator",
@@ -43,6 +36,14 @@ const projects = [
       tags: ["React", " Tailwind CSS"],
       demoLink: " https://devanandha05.github.io/portfolio-website/",
       codeLink: "https://github.com/Devanandha05/portfolio-website",
+    },
+    {
+      title: "SerenYu Landing Page",
+      description: "Modern, minimal Landing page showcasing frontend skills.",
+      image: yoga,
+      tags: ["HTML", " CSS"],
+      demoLink: "https://devanandha05.github.io/yoga-landing-page/",
+      codeLink: "https://github.com/Devanandha05/yoga-landing-page",
     },
     // Add more as needed
   ];
