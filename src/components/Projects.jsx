@@ -3,6 +3,7 @@ import tictac from '../assets/tictactoe.png'
 import yoga from '../assets/yoga.png';
 import font from '../assets/font-generator.png';
 import portfolio from '../assets/portfolio.png';
+import dashboard from '../assets/client-dark.png';
 
 const projects = [
   {
@@ -44,17 +45,25 @@ const projects = [
       demoLink: " https://devanandha05.github.io/customfont-creator/",
       codeLink: "https://github.com/Devanandha05/customfont-creator",
     },
+    {
+      title: "Freelancer Dashboard UI",
+      description: "A complete modern,minimal Dashboard UI with Dark/Light mode toggle showcasing React and Tailwind skills.",
+      image: dashboard,
+      tags: ["React js", " Tailwind CSS", "Framer motion"],
+      demoLink: "https://sdvananda.gumroad.com/l/aowey",
+      codeLink: "https://github.com/Devanandha05/freelance-panel-lite",
+    },
     // Add more as needed
   ];
 import { motion } from "framer-motion";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 px-6 md:px-20 bg-gradient-to-l from-[#c5c6ca] via-[#cfd6db] to-[#c8c8cc] 
+    <section id="projects" className="py-20 px-6 md:px-20 bg-gradient-to-l
+     from-[#d2d3d6] via-[#dee4e8] to-[#d6d6e0] 
     dark:bg-gradient-to-r dark:from-[#0c142a] dark:via-[#121132] dark:to-[#212951] text-gray-800 dark:text-white">
       <h2 className="text-5xl font-bold mb-10 text-center
-          bg-gradient-to-r 
-          from-[#1d1334]  via-[#32696a] to-[#18173b] 
+          bg-gradient-to-br from-[#151237] via-[#11102b] to-[#747ac0] 
           dark:from-[#e0e0e0] dark:to-[#aaaaaa] 
           bg-clip-text text-transparent">
           PROJECTS

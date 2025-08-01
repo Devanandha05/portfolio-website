@@ -7,13 +7,12 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navItems = ["about", "skills", "projects"];
 
   return (
     <nav
@@ -21,12 +20,12 @@ export default function Navbar() {
         scrolled ? "hidden" : "bg-transparent"
       } text-white`}
     >
-      {/* Brand */}
+      {/* Logo (unchanged) */}
       <h1 className="text-3xl font-headingfont pt-2 font-bold tracking-wider">DS</h1>
 
-      {/* Desktop Menu */}
+      {/* Desktop Nav */}
       <ul className="hidden md:flex gap-10 text-xl pt-2">
-        {["about", "skills", "projects"].map((item) => (
+        {navItems.map((item) => (
           <li key={item}>
             <a
               href={`#${item}`}
@@ -42,28 +41,31 @@ export default function Navbar() {
       <motion.a
         href="#contact"
         whileHover={{ scale: 1.05 }}
-        className=" md:inline-block px-4 py-2 border border-white rounded-xl text-white hover:bg-white hover:text-black transition font-medium backdrop-blur-sm bg-white/10"
+        className="hidden md:inline-block px-4 py-2 border border-white rounded-xl text-white hover:bg-white hover:text-black transition font-medium backdrop-blur-sm bg-white/10"
       >
         Reach Out
       </motion.a>
 
       {/* Mobile Toggle */}
       <div className="md:hidden z-[60]">
-        <button onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="p-2 rounded-md bg-white/10 hover:bg-white/20 transition"
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Animated Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Background dim */}
+            {/* Dim Background */}
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.4 }}
+              animate={{ opacity: 0.5 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black z-40"
+              className="fixed inset-0 bg-black z-40 backdrop-blur-sm"
               onClick={() => setIsOpen(false)}
             />
 
@@ -73,22 +75,30 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 right-0 h-full w-64 bg-gradient-to-b from-[#0b0a17] via-[#081226] to-[#14171f] z-50 p-6 flex flex-col gap-6 text-white"
+              className="fixed top-0 right-0 h-full w-64 bg-[#0f111a] z-50 flex flex-col justify-center gap-8 px-8 py-12 text-white shadow-xl"
             >
-              <div className="flex justify-end">
-                <button onClick={() => setIsOpen(false)}><X size={24} /></button>
-              </div>
-
-              {["about", "skills", "projects"].map((item) => (
-                <a
+              {navItems.map((item) => (
+                <motion.a
                   key={item}
                   href={`#${item}`}
                   onClick={() => setIsOpen(false)}
-                  className="text-xl font-medium hover:text-[#bad0d7] transition"
+                  className="text-2xl font-semibold tracking-wide capitalize hover:text-cyan-400 transition"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 * navItems.indexOf(item) }}
                 >
-                  {item.charAt(0).toUpperCase() + item.slice(1)}
-                </a>
+                  {item}
+                </motion.a>
               ))}
+
+              <motion.a
+                href="#contact"
+                onClick={() => setIsOpen(false)}
+                className="mt-6 text-center px-4 py-2 border border-white rounded-xl text-white hover:bg-white hover:text-black transition font-medium backdrop-blur-sm bg-white/10"
+                whileHover={{ scale: 1.05 }}
+              >
+                Reach Out
+              </motion.a>
             </motion.div>
           </>
         )}

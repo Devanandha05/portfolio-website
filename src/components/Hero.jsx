@@ -26,7 +26,7 @@ export default function Hero() {
     return () => clearTimeout(timer);
   }, []);
 
-  const nameWords = ["DEVANANDHA"," ", "S"];
+  const nameWords = ["DEVANANDHA", "S"];
   const letterVariants = {
     hidden: { opacity: 0, scale: 0.9, rotate: -3 },
     visible: (i) => ({
@@ -35,7 +35,7 @@ export default function Hero() {
       rotate: 0,
       transition: {
         delay: i * 0.04,
-        duration: 0.4,
+        duration: 0.6,
         ease: "easeOut",
       },
     }),
@@ -52,7 +52,7 @@ export default function Hero() {
         <motion.h2
           initial={{ opacity: 0, y: 20, letterSpacing: "-0.05em" }}
           animate={{ opacity: 1, y: 0, letterSpacing: "0.05em" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-4xl sm:text-4xl md:text-6xl font-light tracking-wider text-gray-300"
         >
           I'M
@@ -99,8 +99,10 @@ export default function Hero() {
           {/* Metallic "Hire Me" Button */}
           <a
             href="#contact"
-            className={`relative overflow-hidden px-6 py-3 rounded-xl bg-gradient-to-br from-[#e2e2e2] to-[#c1c1c1] text-black font-bold shadow-[0_4px_30px_rgba(255,255,255,0.1)] backdrop-blur-md hover:brightness-110 hover:scale-105 transition-all duration-300
-            } shimmer-effect`}
+            className="relative overflow-hidden px-6 py-3 rounded-xl bg-gradient-to-br 
+              from-[#ffffff] via-[#d4d4d4] to-[#b6b6b6]
+               text-black font-bold shadow-[0_4px_30px_rgba(255,255,255,0.2)] backdrop-blur-md 
+               hover:brightness-110 hover:scale-105 transition-all duration-300"
           >
             <span className="relative z-10">HIRE ME</span>
           </a>
