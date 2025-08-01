@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 export default {
   darkMode: 'class', // important!
   content: [
@@ -7,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        headingfont: ['"Space Grotesk"', 'sans-serif'],
+        bodyfont: ['"Sora"', 'sans-serif'],
+      },
       transformOrigin: {
         'center': 'center',
       },

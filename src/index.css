@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,3 +7,40 @@
 html{
     scroll-behavior: smooth;
 }
+
+.btn{
+    background: linear-gradient(to bottom right, #2b2578, #4f3cc1, #86e1fd);
+    color: #f6f6f6;
+    transition: transform 0.2s ease;
+}
+
+.btn-hover{
+    transform: scale(1.03);
+}
+
+@keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  .shimmer-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-20deg);
+    animation: shimmer 2.5s infinite;
+  }
+  

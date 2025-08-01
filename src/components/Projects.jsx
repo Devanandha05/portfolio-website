@@ -1,9 +1,8 @@
 import ecodo from '../assets/ecodo.png';
-import coffee from '../assets/coffeee.png';
 import tictac from '../assets/tictactoe.png'
 import yoga from '../assets/yoga.png';
 import font from '../assets/font-generator.png';
-import portfolio from '../assets/portfolio-web.png';
+import portfolio from '../assets/portfolio.png';
 
 const projects = [
   {
@@ -22,14 +21,6 @@ const projects = [
       codeLink: "https://github.com/Devanandha05/tictactoe-backend",
     },
     {
-      title: "Font Generator",
-      description: "Responsive Font generator website using Javascript.",
-      image: font ,
-      tags: ["Javascript", " Canvas"],
-      demoLink: " https://devanandha05.github.io/customfont-creator/",
-      codeLink: "https://github.com/Devanandha05/customfont-creator",
-    },
-    {
       title: "Portfolio Website",
       description: "Responsive Portfolio website with Dark/Light Theme.",
       image: portfolio ,
@@ -45,15 +36,29 @@ const projects = [
       demoLink: "https://devanandha05.github.io/yoga-landing-page/",
       codeLink: "https://github.com/Devanandha05/yoga-landing-page",
     },
+    {
+      title: "Font Generator",
+      description: "Responsive Font generator website using Javascript.",
+      image: font ,
+      tags: ["Javascript", " Canvas"],
+      demoLink: " https://devanandha05.github.io/customfont-creator/",
+      codeLink: "https://github.com/Devanandha05/customfont-creator",
+    },
     // Add more as needed
   ];
-
-  import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 px-6 md:px-20 bg-black/5 dark:bg-[#1e102a] text-gray-800 dark:text-white">
-      <h2 className="text-4xl font-bold text-center mb-12">Projects</h2>
+    <section id="projects" className="py-20 px-6 md:px-20 bg-gradient-to-l from-[#c5c6ca] via-[#cfd6db] to-[#c8c8cc] 
+    dark:bg-gradient-to-r dark:from-[#0c142a] dark:via-[#121132] dark:to-[#212951] text-gray-800 dark:text-white">
+      <h2 className="text-5xl font-bold mb-10 text-center
+          bg-gradient-to-r 
+          from-[#1d1334]  via-[#32696a] to-[#18173b] 
+          dark:from-[#e0e0e0] dark:to-[#aaaaaa] 
+          bg-clip-text text-transparent">
+          PROJECTS
+        </h2>
       <div className="mx-4 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, i) => (
           <motion.div

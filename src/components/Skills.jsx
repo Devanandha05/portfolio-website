@@ -1,149 +1,67 @@
+import React from "react";
 import { motion } from "framer-motion";
-import reactIcon from '../assets/react-icon.png'
-import tail from '../assets/tailwind-logo.png'
-import html from '../assets/html-logo.png'
-import css from '../assets/css.png'
-import js from '../assets/js-logo.png'
-import java from '../assets/java.jpg'
-import python from '../assets/Python.jpg'
-import cpp from '../assets/cpp.jpg'
-import mongo from '../assets/mongodb.png'
-import sql from '../assets/mysql.jpg'
-import git from "../assets/github.jpg";
-import vs from "../assets//vscode-logo.jpg";
-import cursor from "../assets/cursor-logo.jpg";
+import {
+  SiReact,
+  SiTailwindcss,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiPython,
+  SiMongodb,
+  SiMysql,
+  SiGithub,
+  SiCplusplus,
+} from "react-icons/si";
 
-const frontendSkills = [
-  { name: "React", knowledge: "Intermediate", icon: reactIcon, fact: "✅ 15+ components built" },
-  { name: "Tailwind CSS", knowledge: "Intermediate", icon: tail, fact: "🎨 Two projects done" },
-  { name: "HTML5", knowledge: "Proficient", icon: html, fact: "📄 Semantic markup pro" },
-  { name: "CSS", knowledge: "Intermediate", icon: css, fact: "💅 Custom animations created" },
-  { name: "JavaScript", knowledge: "Intermediate", icon: js, fact: "💡 2 APIs integrated" },
+const icons = [
+  { Icon: SiReact, color: "#61DAFB", style: "translate-x-2 -translate-y-1" },
+  { Icon: SiTailwindcss, color: "#38BDF8", style: "-translate-x-2" },
+  { Icon: SiHtml5, color: "#E44D26", style: "translate-y-2" },
+  { Icon: SiCss3, color: "#1572B6", style: "-translate-y-1 translate-x-1" },
+  { Icon: SiJavascript, color: "#F7DF1E", style: "translate-x-3" },
+  { Icon: SiPython, color: "#3776AB", style: "-translate-x-3 -translate-y-1" },
+  { Icon: SiMongodb, color: "#47A248", style: "translate-y-3" },
+  { Icon: SiMysql, color: "#00758F", style: "-translate-y-2 translate-x-1" },
+  { Icon: SiGithub, color: "#111111", style: "translate-x-2 translate-y-1" },
+  { Icon: SiCplusplus, color: "#00599C", style: "-translate-x-1" },
 ];
 
-const programmingLanguages = [ 
-  { name: "Java", knowledge: "Intermediate", icon: java, fact: "OOP Projects done" },
-  { name: "Python", knowledge: "Beginner", icon: python, fact: "🐍 Learning data handling" },
-  { name: "C++", knowledge: "Proficient", icon: cpp, fact: "30+ programs written" }
-];
-
-
-const databases = [
-  { name: "MongoDB", knowledge: "Basic Understanding", icon: mongo, fact: "📦 Used in a Full stack project" },
-  { name: "MySQL", knowledge: "Intermediate", icon: sql, fact: "🗂Skilled in SQL queries" }
-];
-
-const Tools = [
-  { name: "Github", knowledge: "Basic Understanding", icon: git, fact: "🔧 Basic operations" },
-  { name: "VS Code", knowledge: "Intermediate", icon: vs, fact: "" },
-  { name: "Cursor AI", knowledge: "Intermediate", icon: cursor, fact: "" }
-];
-
-
-const getKnowledgePercent = (level) => {
-  switch (level) {
-    case "Beginner": return "20%";
-    case "Basic Understanding": return "35%";
-    case "Intermediate": return "60%";
-    case "Proficient": return "85%";
-    default: return "50%";
-  }
-};
-
-const SkillCard = ({ skill }) => {
+function SkillCloud() {
   return (
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 60 }}
-        transition={{ duration: 0.6 }}
-        className="group perspective"
-        id="skills"
-      >
-    
-      <div className="relative w-full h-40 transition-transform duration-500 transform-style preserve-3d group-hover:rotate-y-180">
-        {/* Front Side */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#f8f8f8] border-black/10 dark:bg-white/10 border dark:border-white/10 rounded-xl shadow-lg backface-hidden p-4">
-          <img src={skill.icon} alt={skill.name} className="w-12 h-12 rounded-lg object-contain mb-2" />
-          <h3 className="text-[#121212] dark:text-[#ffffff] text-lg font-semibold">{skill.name}</h3>
-          <div className="w-full h-2 bg-[#a0b5d5] rounded-full mt-2 overflow-hidden">
-            <div
-              className="h-full bg-[#4074d4] rounded-full"
-              style={{ width: getKnowledgePercent(skill.knowledge) }}
-            />
-          </div>
-        </div>
+    <section className="py-24 px-6 bg-gradient-to-l from-[#c5c6ca] via-[#cfd6db] to-[#c8c8cc] 
+    dark:bg-gradient-to-r dark:from-[#0c142a] dark:via-[#121132] dark:to-[#212951] transition-colors duration-300">
+      <h2 className="text-center mb-5 text-5xl md:text-5xl font-bold bg-gradient-to-br from-[#151237] via-[#11102b] to-[#747ac0] bg-clip-text text-transparent dark:from-[#f2efef] dark:via-[#7a7676] dark:to-[#cec8c8]">
+       SKILLS & TOOLS
+      </h2>
 
-        {/* Back Side */}
-        <div className="absolute inset-0 flex flex-col justify-center items-center bg-[#5f1fc7] text-white rounded-xl shadow-md rotate-y-180 backface-hidden p-4">
-        <h3 className="text-white text-lg font-semibold mb-4">{skill.name}</h3>
-        <p className="text-sm font-semibold">{skill.knowledge}</p>
-          
-          <p className="mt-2 text-xs text-center">{skill.fact}</p>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
-
-export default function SkillsSection() {
-  return (
-    <motion.section
-        initial= {{ opacity: 1, y: 0 }}
-        whileInView= {{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport= {{ once: true }}
-      className="bg-[#e5e8d8] text-black dark:bg-[#160822] py-24 px-6 dark:text-white"
-    >
-
-<div className="max-w-6xl mx-auto space-y-12">
-  <h2 className="text-3xl font-bold text-center mb-8">Skills & Tools</h2>
-  {/* First Row: Frontend + Languages */}
-  <div className="flex flex-col md:flex-row gap-20 mb-2">
-    {/* Frontend */}
-    <div className="flex-1">
-      <h3 className="text-2xl font-semibold mb-0">Frontend</h3>
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-        {frontendSkills.map((skill) => (
-          <SkillCard key={skill.name} skill={skill} />
+      <div className="max-w-3xl mx-auto mt-16 relative flex flex-wrap justify-center gap-8">
+        {icons.map(({ Icon, color, style }, index) => (
+          <motion.div
+            key={index}
+            animate={{ y: [0, -8, 0] }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: index * 0.2,
+            }}
+            className={`text-4xl p-4 rounded-full 
+              ${style}
+              bg-gradient-to-br 
+              from-[#ffffffdd] via-[#d4d4d4cc] to-[#bdbdbdcc] 
+              dark:from-[#1f233d] dark:via-[#2e324a] dark:to-[#3c415a] 
+              ring-1 ring-white/40 dark:ring-white/10
+              shadow-[inset_2px_2px_5px_rgba(255,255,255,0.4),_2px_2px_8px_rgba(0,0,0,0.2)] 
+              dark:shadow-[inset_1px_1px_2px_rgba(255,255,255,0.1),_2px_2px_12px_rgba(0,255,255,0.1)]
+              backdrop-blur-sm
+              transition`}
+          >
+            <Icon size={42} color={color} />
+          </motion.div>
         ))}
       </div>
-    </div>
-
-    {/* Languages */}
-    <div className="flex-1">
-      <h3 className="text-2xl font-semibold mb-0">Languages</h3>
-      <div className="grid grid-cols-2 sm:grid-cols-3 mb-6 gap-6">
-        {programmingLanguages.map((skill) => (
-          <SkillCard key={skill.name} skill={skill} />
-        ))}
-      </div>
-    </div>
-  </div>
-
-  {/* Second Row: Databases + Tools */}
-  <div className="flex flex-col md:flex-row gap-10">
-    {/* Databases */}
-    <div className="flex-1">
-      <h3 className="text-2xl font-semibold mt-5 mb-0">Databases</h3>
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-6">
-        {databases.map((skill) => (
-          <SkillCard key={skill.name} skill={skill} />
-        ))}
-      </div>
-    </div>
-
-    {/* Tools */}
-    <div className="flex-1">
-      <h3 className="text-2xl font-semibold mt-4 mb-0">Other Tools</h3>
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-        {Tools.map((skill) => (
-          <SkillCard key={skill.name} skill={skill} />
-        ))}
-      </div>
-    </div>
-  </div>
-</div>
-
-    </motion.section>
+    </section>
   );
 }
+
+export default SkillCloud;
