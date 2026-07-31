@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
@@ -12,92 +12,94 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = ["about", "skills", "projects"];
+  const navItems = [
+    { label: "About", href: "#about" },
+    { label: "Skills", href: "#skills" },
+    { label: "Projects", href: "#projects" },
+    { label: "Contact", href: "#contact" },
+  ];
 
   return (
-    <nav
-      className={`fixed top-0 left-0 z-50 w-full px-6 md:px-10 flex justify-between items-center py-4 transition-all duration-300 ${
-        scrolled ? "hidden" : "bg-transparent"
-      } text-white`}
-    >
-      {/* Logo (unchanged) */}
-      <h1 className="text-3xl font-headingfont pt-2 font-bold tracking-wider">DS</h1>
-
-      {/* Desktop Nav */}
-      <ul className="hidden md:flex gap-10 text-xl pt-2">
-        {navItems.map((item) => (
-          <li key={item}>
-            <a
-              href={`#${item}`}
-              className="relative after:absolute after:left-0 after:-bottom-1 after:h-[3px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-            >
-              {item.charAt(0).toUpperCase() + item.slice(1)}
-            </a>
-          </li>
-        ))}
-      </ul>
-
-      {/* Desktop CTA */}
-      <motion.a
-        href="#contact"
-        whileHover={{ scale: 1.05 }}
-        className="hidden md:inline-block px-4 py-2 border border-white rounded-xl text-white hover:bg-white hover:text-black transition font-medium backdrop-blur-sm bg-white/10"
+    <nav className="fixed left-0 top-0 z-50 w-full px-4 py-4 text-white md:px-8">
+      <div
+        className={`mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 px-4 py-2.5 backdrop-blur-xl transition-all duration-300 ${
+          scrolled ? "bg-slate-950/70 shadow-lg shadow-black/20" : "bg-white/10"
+        }`}
       >
-        Reach Out
-      </motion.a>
+        <a href="#top" className="text-2xl font-bold tracking-[0.35em] text-white">
+          DS
+        </a>
 
-      {/* Mobile Toggle */}
-      <div className="md:hidden z-[60]">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="p-2 rounded-md bg-white/10 hover:bg-white/20 transition"
+        <ul className="hidden items-center gap-7 text-sm font-medium md:flex">
+          {navItems.map((item) => (
+            <li key={item.label}>
+              <a
+                href={item.href}
+                className="relative transition hover:text-cyan-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-cyan-300 after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <motion.a
+          href="#contact"
+          whileHover={{ scale: 1.04 }}
+          className="hidden rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/20 md:inline-block"
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          Get In Touch
+        </motion.a>
+
+        <div className="z-[60] md:hidden">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="rounded-full border border-white/15 bg-white/10 p-2 transition hover:bg-white/20"
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
 
-      {/* Animated Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Dim Background */}
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.5 }}
+              animate={{ opacity: 0.55 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black z-40 backdrop-blur-sm"
+              className="fixed inset-0 z-40 bg-black backdrop-blur-sm"
               onClick={() => setIsOpen(false)}
             />
 
-            {/* Slide-in Menu */}
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 right-0 h-full w-64 bg-[#0f111a] z-50 flex flex-col justify-center gap-8 px-8 py-12 text-white shadow-xl"
+              className="fixed right-0 top-0 z-50 flex h-full w-64 flex-col justify-center gap-8 bg-[#0f111a] px-8 py-12 text-white shadow-2xl"
             >
               {navItems.map((item) => (
                 <motion.a
-                  key={item}
-                  href={`#${item}`}
+                  key={item.label}
+                  href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-2xl font-semibold tracking-wide capitalize hover:text-cyan-400 transition"
+                  className="text-2xl font-semibold tracking-wide capitalize transition hover:text-cyan-400"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 * navItems.indexOf(item) }}
+                  transition={{ delay: 0.08 * navItems.indexOf(item) }}
                 >
-                  {item}
+                  {item.label}
                 </motion.a>
               ))}
 
               <motion.a
                 href="#contact"
                 onClick={() => setIsOpen(false)}
-                className="mt-6 text-center px-4 py-2 border border-white rounded-xl text-white hover:bg-white hover:text-black transition font-medium backdrop-blur-sm bg-white/10"
-                whileHover={{ scale: 1.05 }}
+                className="mt-4 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-center font-semibold text-cyan-100"
+                whileHover={{ scale: 1.04 }}
               >
-                Reach Out
+                Get In Touch
               </motion.a>
             </motion.div>
           </>

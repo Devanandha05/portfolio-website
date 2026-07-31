@@ -6,6 +6,7 @@ import ThemeToggle from "./components/ThemeToggle";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SkillCloud from "./components/Skills";
+import Certifications from "./components/Certifications";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Hero />
       <SkillCloud />
       <About  />
+      <Certifications />
       <Projects />
       <Contact />
       <ThemeToggle />

@@ -1,0 +1,17 @@
+Devanandha S.
+Full-Stack Web Developer
+
+Profile
+A problem-solving developer focused on building elegant, user-first digital experiences with clean logic and modern tools.
+
+Experience
+- Analyst Trainee at Cognizant
+- Portfolio and web applications built with React, Tailwind CSS, and modern JavaScript workflows
+
+Education
+- BCA Graduate
+
+Skills
+- Frontend: React, Tailwind CSS, JavaScript, HTML/CSS
+- Backend: Node.js, MySQL, MongoDB
+- Mindset: Problem solving, adaptability, clean code, continuous learning
