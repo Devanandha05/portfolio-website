@@ -75,9 +75,10 @@ export default function About() {
               Analyst Trainee • Full-Stack Developer • Lifelong Learner
             </p>
 
-            <p className="mb-6 text-xl leading-relaxed text-slate-700 dark:text-slate-200 md:text-2xl">
-            I am an Analyst Trainee at Cognizant with a background in full-stack web development and enterprise application support. My experience spans modern web technologies, mainframe systems, and AI-assisted development. I enjoy solving real-world problems through clean, maintainable code while continuously 
-            expanding my technical expertise across software engineering disciplines.            </p>
+            <p className="mb-6 text-md leading-relaxed text-slate-700 dark:text-slate-200 md:text-2xl">
+            I am an Analyst Trainee at Cognizant with a background in full-stack web development and enterprise application support. My experience spans modern web
+            technologies, mainframe systems, and AI-assisted development. I enjoy solving real-world problems through clean, maintainable code while continuously 
+            expanding my technical expertise across software engineering disciplines.</p>
 
             <div className="mb-8 grid gap-4 sm:grid-cols-2">
               <div className="rounded-2xl border border-slate-200/70 bg-slate-50/80 p-4 dark:border-slate-700 dark:bg-slate-800/60">
